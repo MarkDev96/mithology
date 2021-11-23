@@ -48,6 +48,7 @@ main{
 .ambos{
     background-color: #343635;
     transition: .5s;
+    color: white;
 }
 
 .btns{
@@ -55,7 +56,7 @@ main{
     margin:150px 0;
     padding: 150px;
     text-align:center;
-    color: black;
+   
 }
 a{
     text-decoration: none;
