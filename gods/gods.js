@@ -1,17 +1,18 @@
-const url = " https://recuperacao-ppw2.herokuapp.com/api/mythology/nordica";
+const url = "https://recuperacao-ppw2.herokuapp.com/api/mythology/0";
 
 let gods =[
 
 ]
+const listGodsHTML = document.querySelector("ul");
 getGods();
 function getGods(){
     let request = fetch(url);
     request.then(function(response){
         response.json().then(function(vetorGods){
-            console.log(vetorGods[0].deuses);
-            gods=vetorGods[0].deuses;
+            console.log(vetorGods.deuses);
+            gods=vetorGods.deuses;
            
-            
+            atualizarLista();
             
         })
         
@@ -22,10 +23,11 @@ function criaGods(gods){
     let li = document.createElement("li");
     let divId = document.createElement("div");
     let img = document.createElement("img");
-    let title = document.createElement("h2");
+    let nome = document.createElement("h2");
     let divDesc = document.createElement("div");
-    let subtitle = document.createElement("h3");
+    let title1 = document.createElement("h3");
     let description = document.createElement("p");
+    let title2 = document.createElement("h3");
     let history = document.createElement("p");
     let divBtn = document.createElement("div");
     let btnEdit = document.createElement("button");
@@ -33,27 +35,39 @@ function criaGods(gods){
 
     divId.className="identifier"
     img.src=gods.imagem;
-    console.log(gods.imagem);
-    title.textContent=gods.nome;
-    divDesc.id="description";
-    subtitle.textContent="Descrição"
-    description=gods.descricao;
+
+    nome.textContent=gods.nome;
+    divDesc.className="description";
+    title1.textContent="Descrição";
+    description.textContent=gods.descricao;
+    title2.textContent="História";
     history.textContent=gods.historia;
     divBtn.className="btns";
     btnEdit.textContent="Editar";
     btnRemover.textContent="Remover";
 
-    const listGodsHTML = document.querySelector("ul");
+    
     listGodsHTML.appendChild(li);
     li.appendChild(divId);
     li.appendChild(divDesc);
     li.appendChild(divBtn);
     divId.appendChild(img);
-    divId.appendChild(title);
-    divDesc.appendChild(subTitle);
+    divId.appendChild(nome);
+    divDesc.appendChild(title1);
     divDesc.appendChild(description);
+    divDesc.appendChild(title2);
     divDesc.appendChild(history);
+    divBtn.appendChild(btnEdit);
+    divBtn.appendChild(btnRemover);
 
 }
 
-console.log(gods[0]);
+function atualizarLista(){
+    // deletar todos os elementos
+    listGodsHTML.innerHTML = ""
+
+    // imprimir lista
+    for(let god of gods){
+        criaGods(god)
+    }
+}
