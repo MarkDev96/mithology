@@ -18,7 +18,7 @@
     </header>
     <button id="myBtn">Criar</button>
     <main>
-        
+
         <ul>
             <li>
                 <div class="identifier">
@@ -27,7 +27,8 @@
                 </div>
                 <div class="description">
                     <h3>Descrição</h3>
-                    <p>Freya é a Deusa do amor na mitologia nórdica, mas também está associada ao sexo, luxúria, beleza, feitiçaria, fertilidade, ouro, guerra e morte</p>
+                    <p>Freya é a Deusa do amor na mitologia nórdica, mas também está associada ao sexo, luxúria, beleza,
+                        feitiçaria, fertilidade, ouro, guerra e morte</p>
                     <h3>História</h3>
                     <p>As valquírias, a elite e os guerreiros angelicais do Panteão Nórdico, são tão belas e perigosas
                         quanto uma tempestade de inverno da meia-noite. No entanto, sua rainha, Freya, tão
@@ -68,17 +69,40 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <h1 style="margin-bottom: 10px;">Criar deus</h1>
-          <label for="nome">Nome</label>
-          <input id="nome" type="text" placehorder="Descrição">
-          <label for="descricao">Descrição</label>
-          <input id="descricao" type="textfield" placehorder="Descrição">
-          <label for="imagem">Imagem</label>
-          <input id="imagem" type="file">
+            <span class="close">&times;</span>
+            <h1 class="text">Criar deus</h1>
+            <form>
+                <div id="above">
+                <div id="left">
+                    <div class="text">
+                        <label  for="nome">Nome:</label>
+                        <input id="nome" type="text" placeholder="Nome do Deus">
+                    </div>
+                    <div class="text">
+                    <label for="imagem">Imagem:</label>
+                    <input id="imagem" placeholder="Link da imagem" type="textfield">
+                    </div>
+                </div>
+                <div id="right">
+                    <div class="text">
+                        <label for="nome">Descrição:</label>
+                        <textarea id="descricao" rows="5" cols="18" placeholrder="Descrição">
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+                <div id="bellow">
+                <label for="nome">História:</label>
+                <textarea id="historia" rows="10" cols="50" placeholrder="Historia">
+                    </textarea>
+                </div>
+                <button id="salvar">Salvar</button>
+            </form>
         </div>
     </div>
-      
+
 </body>
 <script src="gods.js"></script>
+<script src="POST.js"></script>
+
 </html>
