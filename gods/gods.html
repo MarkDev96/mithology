@@ -76,27 +76,28 @@
                 <div id="left">
                     <div class="text">
                         <label  for="nome">Nome:</label>
-                        <input id="nome" type="text" placeholder="Nome do Deus">
+                        <input id="nome" type="text" placeholder="Nome do Deus" required>
                     </div>
                     <div class="text">
                     <label for="imagem">Imagem:</label>
-                    <input id="imagem" placeholder="Link da imagem" type="textfield">
+                    <input id="imagem" type="url" placeholder="Link da imagem" type="textfield" required>
                     </div>
                 </div>
                 <div id="right">
                     <div class="text">
                         <label for="nome">Descrição:</label>
-                        <textarea id="descricao" rows="5" cols="18" placeholrder="Descrição">
+                        <textarea id="descricao" rows="8" cols="18" placeholrder="Descrição" required>
                         </textarea>
                     </div>
                 </div>
             </div>
                 <div id="bellow">
                 <label for="nome">História:</label>
-                <textarea id="historia" rows="10" cols="50" placeholrder="Historia">
+                <textarea id="historia" rows="10" cols="50" placeholrder="Historia" required>
                     </textarea>
                 </div>
-                <button id="salvar">Salvar</button>
+                <input type="submit" value="Salvar">
+               <!-- <button id="salvar">Salvar</button> -->
             </form>
         </div>
     </div>

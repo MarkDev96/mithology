@@ -1,6 +1,6 @@
 const urlpost = "https://recuperacao-ppw2.herokuapp.com/api/mythology/creatures/0"
-const btnSalvar = document.querySelector("#salvar");
-btnSalvar.addEventListener('click', function (e) {
+const btnSalvar = document.querySelector("form");
+btnSalvar.addEventListener('submit', function (e) {
     e.preventDefault();
     let name = document.querySelector("#nome");
     let image = document.querySelector("#imagem");
@@ -26,7 +26,7 @@ btnSalvar.addEventListener('click', function (e) {
     resquest.then(function(response){
         console.log(response);
         if(response.status==200){
-            alert("Deus inseridacom sucesso");
+            alert("Criatura inserida com sucesso");
             getGods();
         }
     })

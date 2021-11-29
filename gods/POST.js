@@ -1,6 +1,6 @@
 const urlpost = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0"
-const btnSalvar = document.querySelector("#salvar");
-btnSalvar.addEventListener('click', function (e) {
+const btnSalvar = document.querySelector("form");
+btnSalvar.addEventListener('submit', function (e) {
     e.preventDefault();
     let name = document.querySelector("#nome");
     let image = document.querySelector("#imagem");
