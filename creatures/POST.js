@@ -19,9 +19,14 @@ btnSalvar.addEventListener('click', function (e) {
             historia: history.value
         })
     })
+    name.value="";
+    image.value="";
+    description.value="";
+    history.value=""
     resquest.then(function(response){
         console.log(response);
         if(response.status==200){
+            alert("Deus inseridacom sucesso");
             getGods();
         }
     })

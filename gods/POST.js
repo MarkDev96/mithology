@@ -1,4 +1,4 @@
-const urlpost = "https://recuperacao-ppw2.herokuapp.com/api/mythology/creatures/0"
+const urlpost = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0"
 const btnSalvar = document.querySelector("#salvar");
 btnSalvar.addEventListener('click', function (e) {
     e.preventDefault();
@@ -19,10 +19,17 @@ btnSalvar.addEventListener('click', function (e) {
             historia: history.value
         })
     })
+    name.value="";
+    image.value="";
+    description.value="";
+    history.value="";
+
     resquest.then(function(response){
         console.log(response);
         if(response.status==200){
+            alert("Deus inserido com sucesso");
             getGods();
+
         }
     })
 
