@@ -1,4 +1,4 @@
-const urlpost = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0"
+
 const btnSalvar = document.querySelector("form");
 btnSalvar.addEventListener('submit', function (e) {
     e.preventDefault();

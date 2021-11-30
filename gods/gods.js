@@ -1,11 +1,13 @@
-const url = "https://recuperacao-ppw2.herokuapp.com/api/mythology/0";
+const urlAll = "https://recuperacao-ppw2.herokuapp.com/api/mythology/0";
+const urlOne  = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0";
+const urlpost = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0";
 
 let gods =[]
 
 const listGodsHTML = document.querySelector("ul");
 getGods();
 function getGods(){
-    let request = fetch(url);
+    let request = fetch(urlAll);
     request.then(function(response){
         response.json().then(function(vetorGods){
             console.log(vetorGods.deuses);
@@ -43,8 +45,14 @@ function criaGods(gods){
     history.textContent=gods.historia;
     divBtn.className="btns";
     btnEdit.textContent="Editar";
+    btnEdit.className="editar"
     btnRemover.textContent="Remover";
-
+    btnRemover.className="remover"
+    
+    btnEdit.onclick = function(){
+      modal.style.display = "block";
+      editar(gods);
+    }
     
     listGodsHTML.appendChild(li);
     li.appendChild(divId);
@@ -70,7 +78,19 @@ function atualizarLista(){
         criaGods(god)
     }
 }
+function editar(god){
+    console.log(god.id);
+   let name = document.querySelector("#nome");
+   let image = document.querySelector("#imagem");
+   let  description = document.querySelector("#descricao");
+   let  history = document.querySelector("#historia");
+    name.value=god.nome;
+    image.value=god.imagem;
+    description.value=god.descricao;
+    history.value = god.historia;
 
+    
+}
 
 var modal = document.getElementById("myModal");
 
