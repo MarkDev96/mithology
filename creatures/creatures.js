@@ -9,13 +9,13 @@ let history = document.querySelector("#historia");
 
 let creatures = []
 
-const listGodsHTML = document.querySelector("ul")
-getGods()
-function getGods() {
+const listCreaturesHTML = document.querySelector("ul")
+getCreatures()
+function getCreatures() {
   let request = fetch(urlAll)
   request.then(function (response) {
-    response.json().then(function (vetorGods) {
-      creatures = vetorGods.criaturas
+    response.json().then(function (vetorCreatures) {
+      creatures = vetorCreatures.criaturas
 
       atualizarLista()
 
@@ -24,7 +24,7 @@ function getGods() {
   })
 
 }
-function criaGods(gods) {
+function criaCreatures(creatures) {
   let li = document.createElement("li")
   let divId = document.createElement("div")
   let img = document.createElement("img")
@@ -39,14 +39,14 @@ function criaGods(gods) {
   let btnRemover = document.createElement("button")
 
   divId.className = "identifier"
-  img.src = gods.imagem
+  img.src = creatures.imagem
 
-  nome.textContent = gods.nome;
+  nome.textContent = creatures.nome;
   divDesc.className = "description";
   title1.textContent = "Descrição";
-  description.textContent = gods.descricao;
+  description.textContent = creatures.descricao;
   title2.textContent = "História";
-  history.textContent = gods.historia;
+  history.textContent = creatures.historia;
   divBtn.className = "btns";
   btnEdit.textContent = "Editar";
   btnEdit.className="editar";
@@ -55,11 +55,15 @@ function criaGods(gods) {
 
   btnEdit.onclick = function () {
     modal.style.display = "block";
-    editar(gods);
+    editar(creatures);
+  }
+
+  btnRemover.onclick = function () {
+    remover(creatures);
   }
 
 
-  listGodsHTML.appendChild(li)
+  listCreaturesHTML.appendChild(li)
   li.appendChild(divId)
   li.appendChild(divDesc)
   li.appendChild(divBtn)
@@ -76,19 +80,19 @@ function criaGods(gods) {
 
 function atualizarLista() {
   // deletar todos os elementos
-  listGodsHTML.innerHTML = ""
+  listCreaturesHTML.innerHTML = ""
 
   // imprimir lista
   for (let creature of creatures) {
-    criaGods(creature)
+    criaCreatures(creature)
   }
 }
-function editar(god) {
-  id.value = god.id;
-  name.value = god.nome;
-  image.value = god.imagem;
-  description.value = god.descricao;
-  history.value = god.historia;
+function editar(creature) {
+  id.value = creature.id;
+  name.value = creature.nome;
+  image.value = creature.imagem;
+  description.value = creature.descricao;
+  history.value = creature.historia;
 }
 function clear() {
   id.value = ""
