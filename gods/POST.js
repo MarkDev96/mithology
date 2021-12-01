@@ -1,12 +1,11 @@
 
-const btnSalvar = document.querySelector("form");
+const btnSalvar = document.querySelector("form")
 btnSalvar.addEventListener('submit', function (e) {
-    e.preventDefault();
-    console.log(name.value,image.value, description.value, history.value);
-    let resquest = fetch(urlpost,{
+    e.preventDefault()
+    let resquest = fetch(urlpost, {
         method: 'POST',
-        headers:{
-            "content-type":"application/json"
+        headers: {
+            "content-type": "application/json"
         },
         body: JSON.stringify({
             nome: name.value,
@@ -15,16 +14,15 @@ btnSalvar.addEventListener('submit', function (e) {
             historia: history.value
         })
     })
-    clear();
+    clear()
 
-    resquest.then(function(response){
-        console.log(response);
-        if(response.status==200){
-            alert("Deus inserido com sucesso");
-            getGods();
+    resquest.then(function (response) {
+        if (response.status == 200) {
+            alert("Deus inserido com sucesso")
+            getGods()
 
         }
     })
 
-    
+
 })

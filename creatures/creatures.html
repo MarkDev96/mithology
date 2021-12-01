@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/odin.ico">
     <link rel="stylesheet" href="creatures.css">
     <title>Criaturas</title>
 </head>
@@ -52,7 +53,7 @@
                         não ter morrido em batalha, então ele e Freya poderiam permanecer juntos para sempre</p>
                 </div>
                 <div class="btns">
-                    <button>Editar</button>
+                    <button id="myBtn">Editar</button>
                     <button>Remover</button>
 
                 </div>
@@ -62,10 +63,8 @@
     <footer class="theme">
         <h5>Por Marcos e Misael</h5>
     </footer>
-     <!-- Modal -->
      <div id="myModal" class="modal">
 
-        <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
             <h1 class="text">Criar criatura</h1>
@@ -97,8 +96,16 @@
                 <input type="submit" value="Salvar">
             </form>
         </div>
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <h1 class="text">Deseja excluir?</h1>
+                <button type="button" class="cancelbtn">Não</button>
+                <button type="button" class="deletebtn">Sim</button>
+            </div>
     </div>
 <script src="creatures.js"></script>
 <script src="POST.js"></script>
+<script src="DELETE.js"></script>
 </body>
 </html>
