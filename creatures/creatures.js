@@ -105,7 +105,7 @@ function clear() {
 }
 
 
-var modal = document.getElementById("myModal")
+let modal = document.getElementById("myModal");
 
 var modaldelete = document.getElementById("myModalDelete")
 
@@ -115,6 +115,7 @@ var btnDel = document.getElementById("myBtnRemove")
 
 var span = document.getElementsByClassName("close")[0]
 
+let voltar = document.getElementById("voltar");
 btn.onclick = function () {
   modal.style.display = "block";
   clear();
@@ -127,6 +128,9 @@ btnDel.onclick = function () {
 span.onclick = function () {
   modal.style.display = "none"
   modaldelete.style.display = "none"
+}
+voltar.onclick = function (){
+  window.history.back();
 }
 
 window.onclick = function (event) {

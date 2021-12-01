@@ -109,7 +109,9 @@ var btn = document.getElementById("myBtn")
 
 var btnDel = document.getElementById("myBtnRemove")
 
-var span = document.getElementsByClassName("close")[0]
+let span = document.getElementsByClassName("close")[0];
+
+let voltar = document.getElementById("voltar")
 
 btn.onclick = function () {
   modal.style.display = "block";
@@ -124,7 +126,9 @@ span.onclick = function () {
   modal.style.display = "none";
 
 }
-
+voltar.onclick = function (){
+  window.history.back()
+}
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";

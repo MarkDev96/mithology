@@ -15,9 +15,12 @@
         <img src="../img/odin.png">
         <h1>Mitologia Nórdica</h1>
     </header>
-    <button id="myBtn">Criar</button>
     <main>
-
+        <section id="inicio">
+            <button id="myBtn">Criar</button>
+            <button id="voltar">Voltar</button>
+        </section>
+        <section>
         <ul>
             <li>
                 <div class="identifier">
@@ -58,6 +61,7 @@
                 </div>
             </li>
         </ul>
+    </section>
     </main>
     <footer class="theme">
         <h5>Por Marcos e Misael</h5>
@@ -70,32 +74,32 @@
             <h1 class="text">Criar deus</h1>
             <form>
                 <div id="above">
-                <div id="left">
-                    <div class="text">
-                        <input id="id" type="hidden" value="">
-                        <label  for="nome">Nome:</label>
-                        <input id="nome" type="text" placeholder="Nome do Deus" required>
+                    <div id="left">
+                        <div class="text">
+                            <input id="id" type="hidden" value="">
+                            <label for="nome">Nome:</label>
+                            <input id="nome" type="text" placeholder="Nome do Deus" required>
+                        </div>
+                        <div class="text">
+                            <label for="imagem">Imagem:</label>
+                            <input id="imagem" type="url" placeholder="Link da imagem" type="textfield" required>
+                        </div>
                     </div>
-                    <div class="text">
-                    <label for="imagem">Imagem:</label>
-                    <input id="imagem" type="url" placeholder="Link da imagem" type="textfield" required >
-                    </div>
-                </div>
-                <div id="right">
-                    <div class="text">
-                        <label for="nome">Descrição:</label>
-                        <textarea id="descricao" rows="8" cols="40" placeholder="Descrição"  required>
+                    <div id="right">
+                        <div class="text">
+                            <label for="nome">Descrição:</label>
+                            <textarea id="descricao" rows="8" cols="40" placeholder="Descrição" required>
                         </textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
                 <div id="bellow">
-                <label for="nome">História:</label>
-                <textarea id="historia" rows="10" cols="50" placeholrder="Historia"  required>
+                    <label for="nome">História:</label>
+                    <textarea id="historia" rows="10" cols="50" placeholrder="Historia" required>
                     </textarea>
                 </div>
                 <input type="submit" value="Salvar">
-               <!-- <button id="salvar">Salvar</button> -->
+                <!-- <button id="salvar">Salvar</button> -->
             </form>
         </div>
     </div>
@@ -111,4 +115,5 @@
 <script src="gods.js"></script>
 <script src="POSTandPUT.js"></script>
 <script src="DELETE.js"></script>
+
 </html>
