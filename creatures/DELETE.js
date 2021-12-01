@@ -1,4 +1,4 @@
-const btnDelete = document.getElementsByClassName("deletebtn")[0];
+const btnDelete = document.getElementById("deleteCreature");
 btnDelete.addEventListener('click', function (e) {
     e.preventDefault();
     let url = urlOne + '/' + id.value;

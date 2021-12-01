@@ -107,7 +107,7 @@ var modaldelete = document.getElementById("myModalDelete")
 
 var btn = document.getElementById("myBtn")
 
-// var btnDel = document.getElementById("myBtnRemove")
+var btnDel = document.getElementById("Remover")
 
 let voltar = document.getElementById("voltar");
 
@@ -116,16 +116,17 @@ btn.onclick = function () {
   clear();
 }
 
-// btnDel.onclick = function () {
-//   modaldelete.style.display = "block";
-// }
+btnDel.onclick = function () {
+  modaldelete.style.display = "block";
+}
 
 voltar.onclick = function () {
   window.history.back();
 }
+
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    modal.style.display = "none"
   }else if(event.target == modaldelete){
     modaldelete.style.display = "none"
   }

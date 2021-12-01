@@ -104,14 +104,13 @@ function clear() {
 
 }
 
-
 let modal = document.getElementById("myModal");
 
 var modaldelete = document.getElementById("myModalDelete");
 
 var btn = document.getElementById("myBtn");
 
-var btnDel = document.querySelector(".myBtnRemove");
+var btnDel = document.getElementById("Remover");
 
 let voltar = document.getElementById("voltar");
 
