@@ -1,6 +1,10 @@
 const urlAll = "https://recuperacao-ppw2.herokuapp.com/api/mythology/0";
 const urlOne  = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0";
 const urlpost = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0";
+let name = document.querySelector("#nome");
+let image = document.querySelector("#imagem");
+let  description = document.querySelector("#descricao");
+let  history = document.querySelector("#historia");
 
 let gods =[]
 
@@ -80,10 +84,7 @@ function atualizarLista(){
 }
 function editar(god){
     console.log(god.id);
-   let name = document.querySelector("#nome");
-   let image = document.querySelector("#imagem");
-   let  description = document.querySelector("#descricao");
-   let  history = document.querySelector("#historia");
+ 
     name.value=god.nome;
     image.value=god.imagem;
     description.value=god.descricao;
@@ -91,7 +92,13 @@ function editar(god){
 
     
 }
+function clear(){
+  name.value="";
+  image.value="";
+  description.value="";
+  history.value="";;
 
+}
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
@@ -103,11 +110,13 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
+  clear();
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+
 }
 
 // When the user clicks anywhere outside of the modal, close it
