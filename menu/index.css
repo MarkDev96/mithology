@@ -65,5 +65,7 @@ a{
 .ambos:hover{
     background-color: rgb(163, 229, 255);
 
-
+}
+@media screen and (width:800px){
+    
 }

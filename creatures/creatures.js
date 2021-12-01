@@ -1,11 +1,18 @@
-const url = "https://recuperacao-ppw2.herokuapp.com/api/mythology/0"
+const urlAll = "https://recuperacao-ppw2.herokuapp.com/api/mythology/0";
+const urlOne = "https://recuperacao-ppw2.herokuapp.com/api/mythology/creatures/0";
+
+let id = document.querySelector("#id");
+let name = document.querySelector("#nome");
+let image = document.querySelector("#imagem");
+let description = document.querySelector("#descricao");
+let history = document.querySelector("#historia");
 
 let creatures = []
 
 const listGodsHTML = document.querySelector("ul")
 getGods()
 function getGods() {
-  let request = fetch(url)
+  let request = fetch(urlAll)
   request.then(function (response) {
     response.json().then(function (vetorGods) {
       creatures = vetorGods.criaturas
@@ -34,15 +41,22 @@ function criaGods(gods) {
   divId.className = "identifier"
   img.src = gods.imagem
 
-  nome.textContent = gods.nome
-  divDesc.className = "description"
-  title1.textContent = "Descrição"
-  description.textContent = gods.descricao
-  title2.textContent = "História"
-  history.textContent = gods.historia
-  divBtn.className = "btns"
-  btnEdit.textContent = "Editar"
-  btnRemover.textContent = "Remover"
+  nome.textContent = gods.nome;
+  divDesc.className = "description";
+  title1.textContent = "Descrição";
+  description.textContent = gods.descricao;
+  title2.textContent = "História";
+  history.textContent = gods.historia;
+  divBtn.className = "btns";
+  btnEdit.textContent = "Editar";
+  btnEdit.className="editar";
+  btnRemover.textContent = "Remover";
+  btnRemover.className = "remover"
+
+  btnEdit.onclick = function () {
+    modal.style.display = "block";
+    editar(gods);
+  }
 
 
   listGodsHTML.appendChild(li)
@@ -69,6 +83,21 @@ function atualizarLista() {
     criaGods(creature)
   }
 }
+function editar(god) {
+  id.value = god.id;
+  name.value = god.nome;
+  image.value = god.imagem;
+  description.value = god.descricao;
+  history.value = god.historia;
+}
+function clear() {
+  id.value = ""
+  name.value = ""
+  image.value = ""
+  description.value = ""
+  history.value = ""
+
+}
 
 
 var modal = document.getElementById("myModal")
@@ -78,7 +107,8 @@ var btn = document.getElementById("myBtn")
 var span = document.getElementsByClassName("close")[0]
 
 btn.onclick = function () {
-  modal.style.display = "block"
+  modal.style.display = "block";
+  clear();
 }
 
 span.onclick = function () {

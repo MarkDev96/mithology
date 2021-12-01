@@ -1,10 +1,11 @@
-const urlAll = "https://recuperacao-ppw2.herokuapp.com/api/mythology/0"
-const urlOne = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0"
-const urlpost = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0"
-let name = document.querySelector("#nome")
-let image = document.querySelector("#imagem")
-let description = document.querySelector("#descricao")
-let history = document.querySelector("#historia")
+const urlAll = "https://recuperacao-ppw2.herokuapp.com/api/mythology/0";
+const urlOne = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0";
+
+let id = document.querySelector("#id");
+let name = document.querySelector("#nome");
+let image = document.querySelector("#imagem");
+let description = document.querySelector("#descricao");
+let history = document.querySelector("#historia");
 
 let gods = []
 
@@ -33,7 +34,7 @@ function criaGods(gods) {
   let btnEdit = document.createElement("button");
   let btnRemover = document.createElement("button");
 
-  divId.className = "identifier"
+  divId.className = "identifier";
   img.src = gods.imagem;
 
   nome.textContent = gods.nome;
@@ -70,19 +71,19 @@ function criaGods(gods) {
 
 function atualizarLista() {
   // deletar todos os elementos
-  listGodsHTML.innerHTML = ""
+  listGodsHTML.innerHTML = "";
 
   // imprimir lista
   for (let god of gods) {
-    criaGods(god)
+    criaGods(god);
   }
 }
 function editar(god) {
-  id.value = god.id
-  name.value = god.nome
-  image.value = god.imagem
-  description.value = god.descricao
-  history.value = god.historia
+  id.value = god.id;
+  name.value = god.nome;
+  image.value = god.imagem;
+  description.value = god.descricao;
+  history.value = god.historia;
 }
 function clear() {
   id.value = ""
