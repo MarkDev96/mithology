@@ -112,9 +112,6 @@ var modaldelete = document.getElementById("myModalDelete");
 var btn = document.getElementById("myBtn");
 
 var btnDel = document.querySelector(".myBtnRemove");
-console.log(btnDel);
-
-var span = document.getElementsByClassName("close")[0]
 
 let voltar = document.getElementById("voltar");
 
@@ -127,10 +124,6 @@ btnDel.onclick = function () {
   modaldelete.style.display = "block";
 }
 
-span.onclick = function () {
-  modal.style.display = "none"
-  modaldelete.style.display = "none"
-}
 voltar.onclick = function () {
   window.history.back();
 }
