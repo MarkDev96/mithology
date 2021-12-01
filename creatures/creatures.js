@@ -51,7 +51,7 @@ function criaCreatures(creatures) {
   btnEdit.textContent = "Editar";
   btnEdit.className = "editar";
   btnRemover.textContent = "Remover";
-  btnRemover.className = "remover"
+  btnRemover.className = "remover";
 
   btnEdit.onclick = function () {
     modal.style.display = "block";
@@ -59,7 +59,8 @@ function criaCreatures(creatures) {
   }
 
   btnRemover.onclick = function () {
-    remover(creatures);
+    modaldelete.style.display = "block";
+    id.value = creatures.id
   }
 
 
@@ -106,9 +107,13 @@ function clear() {
 
 let modal = document.getElementById("myModal");
 
-let btn = document.getElementById("myBtn");
+var modaldelete = document.getElementById("myModalDelete")
 
-let span = document.getElementsByClassName("close")[0];
+var btn = document.getElementById("myBtn")
+
+var btnDel = document.getElementById("myBtnRemove")
+
+var span = document.getElementsByClassName("close")[0]
 
 let voltar = document.getElementById("voltar");
 btn.onclick = function () {
@@ -116,8 +121,13 @@ btn.onclick = function () {
   clear();
 }
 
+btnDel.onclick = function () {
+  modaldelete.style.display = "block";
+}
+
 span.onclick = function () {
-  modal.style.display = "none";
+  modal.style.display = "none"
+  modaldelete.style.display = "none"
 }
 voltar.onclick = function () {
   window.history.back();
@@ -125,6 +135,8 @@ voltar.onclick = function () {
 
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    modal.style.display = "none"
+  }else if(event.target == modaldelete){
+    modaldelete.style.display = "none"
   }
 }

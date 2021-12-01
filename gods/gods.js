@@ -54,6 +54,11 @@ function criaGods(gods) {
     editar(gods);
   }
 
+  btnRemover.onclick = function () {
+    modaldelete.style.display = "block";
+    id.value = gods.id
+  }
+
   listGodsHTML.appendChild(li);
   li.appendChild(divId);
   li.appendChild(divDesc);
@@ -78,6 +83,7 @@ function atualizarLista() {
     criaGods(god);
   }
 }
+
 function editar(god) {
   id.value = god.id;
   name.value = god.nome;
@@ -85,6 +91,7 @@ function editar(god) {
   description.value = god.descricao;
   history.value = god.historia;
 }
+
 function clear() {
   id.value = "";
   name.value = "";
@@ -93,9 +100,14 @@ function clear() {
   history.value = "";
 
 }
-let modal = document.getElementById("myModal");
 
-let btn = document.getElementById("myBtn");
+var modal = document.getElementById("myModal")
+
+var modaldelete = document.getElementById("myModalDelete")
+
+var btn = document.getElementById("myBtn")
+
+var btnDel = document.getElementById("myBtnRemove")
 
 let span = document.getElementsByClassName("close")[0];
 
@@ -104,6 +116,10 @@ let voltar = document.getElementById("voltar");
 btn.onclick = function () {
   modal.style.display = "block";
   clear();
+}
+
+btnDel.onclick = function () {
+  modaldelete.style.display = "block";
 }
 
 span.onclick = function () {
@@ -116,5 +132,7 @@ voltar.onclick = function () {
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
+  }else if(event.target == modaldelete){
+    modaldelete.style.display = "none"
   }
 }
