@@ -93,11 +93,13 @@ function clear() {
   history.value = ""
 
 }
-var modal = document.getElementById("myModal");
+let modal = document.getElementById("myModal");
 
-var btn = document.getElementById("myBtn");
+let btn = document.getElementById("myBtn");
 
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
+
+let voltar = document.getElementById("voltar")
 
 btn.onclick = function () {
   modal.style.display = "block";
@@ -108,7 +110,9 @@ span.onclick = function () {
   modal.style.display = "none";
 
 }
-
+voltar.onclick = function (){
+  window.history.back()
+}
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";

@@ -29,7 +29,13 @@ header img{
 }
 main{
   display: flex;
+  flex-direction: column;
   
+}
+#inicio{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content:space-between;
 }
 ul{
    list-style-type: none;
