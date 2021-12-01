@@ -101,13 +101,13 @@ function clear() {
 
 }
 
-var modal = document.getElementById("myModal")
+let modal = document.getElementById("myModal");
 
-var modaldelete = document.getElementById("myModalDelete")
+let modaldelete = document.getElementById("myModalDelete");
 
-var btn = document.getElementById("myBtn")
+let btn = document.getElementById("myBtn");
 
-var btnDel = document.getElementById("Remover")
+let btnDel = document.getElementById("Remover");
 
 let voltar = document.getElementById("voltar");
 
@@ -127,7 +127,7 @@ voltar.onclick = function () {
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none"
-  }else if(event.target == modaldelete){
+  } else if (event.target == modaldelete) {
     modaldelete.style.display = "none"
   }
 }

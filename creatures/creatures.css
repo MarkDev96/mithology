@@ -105,6 +105,17 @@ input[type=submit],button{
   text-align: justify;
   box-shadow: 0 0 1em black;
 }
+#content{
+  text-align: center;
+  width: 30%;
+}
+#content button{
+  align-self: initial;
+}
+#model-btns{
+  text-align: center;
+
+}
 form{
   display:flex;
   flex-direction: column;
