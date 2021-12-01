@@ -1,4 +1,3 @@
-
 const btnSalvar = document.querySelector("form");
 btnSalvar.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -16,7 +15,6 @@ btnSalvar.addEventListener('submit', function (e) {
             })
         })
         clear()
-    
         resquest.then(function (response) {
             if (response.status == 200) {
                 alert("Deus inserido com sucesso")
@@ -42,7 +40,7 @@ btnSalvar.addEventListener('submit', function (e) {
         clear();
         resquest.then(function (response) {
             if (response.status == 200) {
-                alert("Deus editado com sucesso")
+                alert("Registro editado com sucesso");
                 getGods()
     
             }

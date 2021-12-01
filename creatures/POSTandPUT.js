@@ -39,7 +39,7 @@ btnSalvar.addEventListener('submit', function (e) {
         clear();
         resquest.then(function (response) {
             if (response.status == 200) {
-                alert("Registro editada com sucesso");
+                alert("Registro editado com sucesso");
                 getGods()
     
             }
