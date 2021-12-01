@@ -48,7 +48,7 @@ btnSalvar.addEventListener('submit', function (e) {
 
 
     }
-
+    document.getElementById('myModal').style.display='none';
 
 
 })

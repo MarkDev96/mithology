@@ -18,7 +18,7 @@ btnSalvar.addEventListener('submit', function (e) {
         resquest.then(function (response) {
             if (response.status == 200) {
                 alert("Criatura inserida com sucesso")
-                getGods()
+                getCreatures()
             }
         })
 
@@ -40,14 +40,14 @@ btnSalvar.addEventListener('submit', function (e) {
         resquest.then(function (response) {
             if (response.status == 200) {
                 alert("Registro editado com sucesso");
-                getGods();
+                getCreatures();
 
             }
         })
 
 
     }
-
+    document.getElementById('myModal').style.display='none';
 
 
 })
