@@ -1,21 +1,21 @@
-const urlAll = "https://recuperacao-ppw2.herokuapp.com/api/mythology/0";
-const urlOne = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0";
-const urlpost = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0";
-let name = document.querySelector("#nome");
-let image = document.querySelector("#imagem");
-let description = document.querySelector("#descricao");
-let history = document.querySelector("#historia");
+const urlAll = "https://recuperacao-ppw2.herokuapp.com/api/mythology/0"
+const urlOne = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0"
+const urlpost = "https://recuperacao-ppw2.herokuapp.com/api/mythology/gods/0"
+let name = document.querySelector("#nome")
+let image = document.querySelector("#imagem")
+let description = document.querySelector("#descricao")
+let history = document.querySelector("#historia")
 
 let gods = []
 
-const listGodsHTML = document.querySelector("ul");
-getGods();
+const listGodsHTML = document.querySelector("ul")
+getGods()
 function getGods() {
-  let request = fetch(urlAll);
+  let request = fetch(urlAll)
   request.then(function (response) {
     response.json().then(function (vetorGods) {
-      gods = vetorGods.deuses;
-      atualizarLista();
+      gods = vetorGods.deuses
+      atualizarLista()
     })
   })
 }
