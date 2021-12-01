@@ -9,14 +9,14 @@ let history = document.querySelector("#historia");
 
 let gods = []
 
-const listGodsHTML = document.querySelector("ul")
-getGods()
+const listGodsHTML = document.querySelector("ul");
+getGods();
 function getGods() {
   let request = fetch(urlAll)
   request.then(function (response) {
     response.json().then(function (vetorGods) {
-      gods = vetorGods.deuses
-      atualizarLista()
+      gods = vetorGods.deuses;
+      atualizarLista();
     })
   })
 }
@@ -86,11 +86,11 @@ function editar(god) {
   history.value = god.historia;
 }
 function clear() {
-  id.value = ""
-  name.value = ""
-  image.value = ""
-  description.value = ""
-  history.value = ""
+  id.value = "";
+  name.value = "";
+  image.value = "";
+  description.value = "";
+  history.value = "";
 
 }
 let modal = document.getElementById("myModal");
@@ -99,7 +99,7 @@ let btn = document.getElementById("myBtn");
 
 let span = document.getElementsByClassName("close")[0];
 
-let voltar = document.getElementById("voltar")
+let voltar = document.getElementById("voltar");
 
 btn.onclick = function () {
   modal.style.display = "block";
@@ -110,8 +110,8 @@ span.onclick = function () {
   modal.style.display = "none";
 
 }
-voltar.onclick = function (){
-  window.history.back()
+voltar.onclick = function () {
+  window.history.back();
 }
 window.onclick = function (event) {
   if (event.target == modal) {

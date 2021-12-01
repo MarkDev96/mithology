@@ -9,15 +9,15 @@ let history = document.querySelector("#historia");
 
 let creatures = []
 
-const listCreaturesHTML = document.querySelector("ul")
-getCreatures()
+const listCreaturesHTML = document.querySelector("ul");
+getCreatures();
 function getCreatures() {
   let request = fetch(urlAll)
   request.then(function (response) {
     response.json().then(function (vetorCreatures) {
       creatures = vetorCreatures.criaturas
 
-      atualizarLista()
+      atualizarLista();
 
     })
 
@@ -25,21 +25,21 @@ function getCreatures() {
 
 }
 function criaCreatures(creatures) {
-  let li = document.createElement("li")
-  let divId = document.createElement("div")
-  let img = document.createElement("img")
-  let nome = document.createElement("h2")
-  let divDesc = document.createElement("div")
-  let title1 = document.createElement("h3")
-  let description = document.createElement("p")
-  let title2 = document.createElement("h3")
-  let history = document.createElement("p")
-  let divBtn = document.createElement("div")
-  let btnEdit = document.createElement("button")
-  let btnRemover = document.createElement("button")
+  let li = document.createElement("li");
+  let divId = document.createElement("div");
+  let img = document.createElement("img");
+  let nome = document.createElement("h2");
+  let divDesc = document.createElement("div");
+  let title1 = document.createElement("h3");
+  let description = document.createElement("p");
+  let title2 = document.createElement("h3");
+  let history = document.createElement("p");
+  let divBtn = document.createElement("div");
+  let btnEdit = document.createElement("button");
+  let btnRemover = document.createElement("button");
 
-  divId.className = "identifier"
-  img.src = creatures.imagem
+  divId.className = "identifier";
+  img.src = creatures.imagem;
 
   nome.textContent = creatures.nome;
   divDesc.className = "description";
@@ -49,7 +49,7 @@ function criaCreatures(creatures) {
   history.textContent = creatures.historia;
   divBtn.className = "btns";
   btnEdit.textContent = "Editar";
-  btnEdit.className="editar";
+  btnEdit.className = "editar";
   btnRemover.textContent = "Remover";
   btnRemover.className = "remover"
 
@@ -63,18 +63,18 @@ function criaCreatures(creatures) {
   }
 
 
-  listCreaturesHTML.appendChild(li)
-  li.appendChild(divId)
-  li.appendChild(divDesc)
-  li.appendChild(divBtn)
-  divId.appendChild(img)
-  divId.appendChild(nome)
-  divDesc.appendChild(title1)
-  divDesc.appendChild(description)
-  divDesc.appendChild(title2)
-  divDesc.appendChild(history)
-  divBtn.appendChild(btnEdit)
-  divBtn.appendChild(btnRemover)
+  listCreaturesHTML.appendChild(li);
+  li.appendChild(divId);
+  li.appendChild(divDesc);
+  li.appendChild(divBtn);
+  divId.appendChild(img);
+  divId.appendChild(nome);
+  divDesc.appendChild(title1);
+  divDesc.appendChild(description);
+  divDesc.appendChild(title2);
+  divDesc.appendChild(history);
+  divBtn.appendChild(btnEdit);
+  divBtn.appendChild(btnRemover);
 
 }
 
@@ -119,7 +119,7 @@ btn.onclick = function () {
 span.onclick = function () {
   modal.style.display = "none";
 }
-voltar.onclick = function (){
+voltar.onclick = function () {
   window.history.back();
 }
 

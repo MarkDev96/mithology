@@ -1,7 +1,7 @@
 const btnSalvar = document.querySelector("form");
 btnSalvar.addEventListener('submit', function (e) {
     e.preventDefault();
-    if(id.value==""){
+    if (id.value == "") {
         let resquest = fetch(urlOne, {
             method: 'POST',
             headers: {
@@ -21,10 +21,10 @@ btnSalvar.addEventListener('submit', function (e) {
                 getGods()
             }
         })
-        
-    }else{
+
+    } else {
         let urlPut = urlOne + '/' + id.value;
-        resquest = fetch(urlPut,{
+        resquest = fetch(urlPut, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -33,21 +33,21 @@ btnSalvar.addEventListener('submit', function (e) {
                 nome: name.value,
                 imagem: image.value,
                 descricao: description.value,
-                historia:history.value
+                historia: history.value
             })
         })
         clear();
         resquest.then(function (response) {
             if (response.status == 200) {
                 alert("Registro editado com sucesso");
-                getGods()
-    
+                getGods();
+
             }
         })
 
 
     }
-   
+
 
 
 })
