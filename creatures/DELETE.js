@@ -1,5 +1,5 @@
-const btnDelete = document.querySelector("form");
-btnDelete.addEventListener('submit', function (e) {
+const btnDelete = document.getElementsByClassName("deletebtn")[0];
+btnDelete.addEventListener('click', function (e) {
     e.preventDefault();
     let url = urlOne + '/' + id.value;
     resquest = fetch(url, {
