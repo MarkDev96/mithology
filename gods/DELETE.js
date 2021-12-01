@@ -16,4 +16,4 @@ btnDelete.addEventListener('click', function (e) {
 
         }
     })
-
+})
