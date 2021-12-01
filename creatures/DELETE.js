@@ -12,7 +12,8 @@ btnDelete.addEventListener('click', function (e) {
     resquest.then(function (response) {
         if (response.status == 200) {
             alert("Criatura deletada com sucesso");
-            getGods()
+            document.getElementById('myModalDelete').style.display='none'
+            getCreatures()
 
         }
     })

@@ -12,8 +12,10 @@ btnDelete.addEventListener('click', function (e) {
     resquest.then(function (response) {
         if (response.status == 200) {
             alert("Deus deletado com sucesso");
+            document.getElementById('myModalDelete').style.display='none';
             getGods()
 
         }
+
     })
 })
