@@ -51,7 +51,7 @@ function criaCreatures(creatures) {
   btnEdit.textContent = "Editar";
   btnEdit.className = "editar";
   btnRemover.textContent = "Remover";
-  btnRemover.className = "remover";
+  btnRemover.className = "myBtnRemove";
 
   btnEdit.onclick = function () {
     modal.style.display = "block";
@@ -107,15 +107,17 @@ function clear() {
 
 let modal = document.getElementById("myModal");
 
-var modaldelete = document.getElementById("myModalDelete")
+var modaldelete = document.getElementById("myModalDelete");
 
-var btn = document.getElementById("myBtn")
+var btn = document.getElementById("myBtn");
 
-var btnDel = document.getElementById("myBtnRemove")
+var btnDel = document.querySelector(".myBtnRemove");
+console.log(btnDel);
 
 var span = document.getElementsByClassName("close")[0]
 
 let voltar = document.getElementById("voltar");
+
 btn.onclick = function () {
   modal.style.display = "block";
   clear();
